@@ -38,14 +38,13 @@ def is_anagram(first_string, second_string):
     second_string_sorted = merge_sort(
         second_string.replace('', ' ').lower().split()
     )
-    if len(first_string_sorted) == 1 or len(second_string_sorted) == 1:
-        first_string_sorted.append('')
-        second_string_sorted.append('')
+    first_string_sorted.append('')
+    second_string_sorted.append('')
     first_string = "".join(first_string_sorted)
     second_string = "".join(second_string_sorted)
-    if len(first_string_sorted) == 0 or len(second_string_sorted) == 0:
+    if len(first_string) == 0 or len(second_string) == 0:
         return first_string, second_string, False
     return first_string, second_string, first_string == second_string
 
 
-print(is_anagram("f", "u"))
+print(is_anagram("", ""))
