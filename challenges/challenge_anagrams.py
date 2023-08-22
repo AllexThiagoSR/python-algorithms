@@ -1,3 +1,14 @@
+"""
+Referência:
+Trybe course ->
+Desenvolvimento Web ->
+Módulo: Ciência da Computação->
+Algoritmos ->
+Dia 03 ->
+Algoritmos que usam dividir e conquistar
+"""
+
+
 def merge_sort(word, start=0, end=None):
     if end is None:
         end = len(word)
@@ -18,22 +29,22 @@ def merge(word, start, mid, end):
     for general_index in range(start, end):
         if left_index >= len(left):
             word[general_index] = right[right_index]
-            right_index = right_index + 1
+            right_index += 1
         elif right_index >= len(right):
             word[general_index] = left[left_index]
-            left_index = left_index + 1
+            left_index += 1
         elif left[left_index] < right[right_index]:
             word[general_index] = left[left_index]
-            left_index = left_index + 1
+            left_index += 1
         else:
             word[general_index] = right[right_index]
-            right_index = right_index + 1
+            right_index += 1
     return word
 
 
 def is_anagram(first_string, second_string):
     first_string_sorted = merge_sort(
-        first_string.replace('', ' ').lower().split()
+        first_string.replace("", " ").lower().split()
     )
     second_string_sorted = merge_sort(
         second_string.replace('', ' ').lower().split()
@@ -47,4 +58,4 @@ def is_anagram(first_string, second_string):
     return first_string, second_string, first_string == second_string
 
 
-print(is_anagram("", ""))
+print(is_anagram("roma", "amor"))
